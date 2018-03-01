@@ -188,4 +188,9 @@ public class MyView extends View {
     public void setExampleDrawable(Drawable exampleDrawable) {
         mExampleDrawable = exampleDrawable;
     }
+
+    public void setText(String text){
+        mExampleString = text;
+        invalidate();
+    }
 }

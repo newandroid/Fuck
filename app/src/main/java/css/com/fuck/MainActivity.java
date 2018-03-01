@@ -17,6 +17,9 @@ import android.view.ViewGroup;
 
 import com.example.concurrency.SimpleThread;
 
+import css.com.fuck.utils.WifiUtil;
+import css.com.fuck.view.MyView;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -61,13 +64,12 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
-    public void init(){
+    public void init() {
 //        new CounterThread().show();
-        SimpleThread.show();
+//        SimpleThread.show();
 
         //test change commit name
     }
-
 
 
     @Override
@@ -102,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
+        private MyView myView;
+
         public PlaceholderFragment() {
         }
 
@@ -121,9 +125,15 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.sample_my_view, container, false);
+            myView = (MyView) rootView.findViewById(R.id.my_view);
+            myView.setOnClickListener(this::onClick);
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
+        }
+
+        private void onClick(View view) {
+            myView.setText("" + WifiUtil.getWifiFreq(view.getContext()));
         }
     }
 
