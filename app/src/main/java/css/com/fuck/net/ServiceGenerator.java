@@ -1,14 +1,15 @@
 package css.com.fuck.net;
 
-import com.dtston.sunyunlock.AppManager;
-import com.dtston.sunyunlock.utils.NetWorkUtils;
+
+import android.util.Log;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import jameson.io.library.util.LogUtils;
+import css.com.fuck.app.AppManager;
+import css.com.fuck.utils.NetWorkUtils;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
@@ -16,9 +17,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.moshi.MoshiConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ServiceGenerator {
     /**
@@ -34,15 +32,15 @@ public class ServiceGenerator {
     private static volatile OkHttpClient okHttpClient;
     private static Retrofit.Builder retrofitBuilder =
             new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .addConverterFactory(MoshiConverterFactory.create());
+                    .baseUrl(BASE_URL);
+//                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                    .addConverterFactory(MoshiConverterFactory.create());
 
     private static Retrofit.Builder retrofitBuilderTest =
             new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .addConverterFactory(ScalarsConverterFactory.create());
+                    .baseUrl(BASE_URL);
+//                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+//                    .addConverterFactory(ScalarsConverterFactory.create());
 
     private static OkHttpClient.Builder okHttpClientBuilder =
             new OkHttpClient.Builder();
@@ -110,10 +108,10 @@ public class ServiceGenerator {
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
             long t1 = System.nanoTime();
-            LogUtils.i(String.format("Sending request %s on %s%n%s", request.url(), chain.connection(), request.headers()));
+            Log.d("",String.format("Sending request %s on %s%n%s", request.url(), chain.connection(), request.headers()));
             Response response = chain.proceed(request);
             long t2 = System.nanoTime();
-            LogUtils.i(String.format(Locale.getDefault(), "Received response for %s in %.1fms%n%s",
+            Log.d("", String.format(Locale.getDefault(), "Received response for %s in %.1fms%n%s",
                     response.request().url(), (t2 - t1) / 1e6d, response.headers()));
             return response;
         }
