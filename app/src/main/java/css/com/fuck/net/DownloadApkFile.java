@@ -13,6 +13,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import css.com.fuck.utils.FileUtil;
+import css.com.fuck.utils.VersionUtil;
 
 public class DownloadApkFile extends AsyncTask<String, Integer, String> {
 	
@@ -32,7 +33,7 @@ public class DownloadApkFile extends AsyncTask<String, Integer, String> {
             int fileLength = connection.getContentLength();
             // 下载文件
             File dirFile= FileUtil.createFileDir(FileUtil.DOWNLOAD_PATH);
-			File file = new File(dirFile, FileUtil.APK_NAME);
+			File file = new File(dirFile, VersionUtil.getAppName()+".apk");
 			if (file.exists()) {
 				file.delete();
 			}

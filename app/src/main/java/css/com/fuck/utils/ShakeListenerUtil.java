@@ -7,10 +7,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Vibrator;
-import android.text.TextUtils;
 
-import css.com.fuck.R;
-import css.com.fuck.app.AppManager;
 import css.com.fuck.net.MRetrofitService;
 import css.com.fuck.net.ParamsHelper;
 import css.com.fuck.net.ServiceGenerator;

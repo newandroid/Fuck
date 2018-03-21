@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 import css.com.fuck.utils.NetWorkUtils;
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -60,7 +60,7 @@ public class ServiceGenerator {
     private static OkHttpClient getOkHttpClient() {
         if (okHttpClient == null) {
             synchronized (ServiceGenerator.class) {
-                Cache cache = new Cache(new File(AppManager.getInstance().getCacheDir(), "HttpCache"),
+                Cache cache = new Cache(new File(ApplicationInit.getInstance().getCacheDir(), "HttpCache"),
                         1024 * 1024 * 100);
                 if (okHttpClient == null) {
                     okHttpClient = new OkHttpClient.Builder()

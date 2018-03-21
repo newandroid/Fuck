@@ -7,8 +7,8 @@ import android.content.Context;
  * Created by Administrator on 2016/10/10.
  */
 
-public class AppManager extends Application {
-    private static AppManager app;
+public class ApplicationInit extends Application {
+    private static ApplicationInit app;
 
     @Override
     public void onCreate() {
@@ -20,7 +20,7 @@ public class AppManager extends Application {
         super.attachBaseContext(base);
     }
 
-    public static AppManager getInstance() {
+    public static ApplicationInit getInstance() {
         return app;
     }
 }

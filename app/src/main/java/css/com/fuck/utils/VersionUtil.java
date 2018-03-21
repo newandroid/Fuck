@@ -1,9 +1,11 @@
 package css.com.fuck.utils;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 
 
 /**
@@ -18,7 +20,7 @@ public class VersionUtil {
 	public static int getVersionCode(){
 		int code=0;		
 		try {
-			Context context= AppManager.getInstance().getApplicationContext();
+			Context context= ApplicationInit.getInstance().getApplicationContext();
 			code=context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -33,7 +35,7 @@ public class VersionUtil {
 	public static String getVersionName(){
 		String versionName=null;
 		try {
-			Context context=AppManager.getInstance().getApplicationContext();
+			Context context= ApplicationInit.getInstance().getApplicationContext();
 			versionName=context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -76,6 +78,23 @@ public class VersionUtil {
 		sbLog.append(VersionUtil.getVersionName());
 		
 		return sbLog.toString();
+	}
+
+	/**
+	 * 获取应用程序名称
+	 */
+	public static synchronized String getAppName() {
+		try {
+			Context context= ApplicationInit.getInstance().getApplicationContext();
+			PackageManager packageManager = context.getPackageManager();
+			PackageInfo packageInfo = packageManager.getPackageInfo(
+					context.getPackageName(), 0);
+			int labelRes = packageInfo.applicationInfo.labelRes;
+			return context.getResources().getString(labelRes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "1";
 	}
 
 }

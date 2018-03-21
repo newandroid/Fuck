@@ -25,7 +25,7 @@ import java.net.SocketException;
 import java.util.Collections;
 import java.util.List;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 
 
 public class WifiUtils {
@@ -73,7 +73,7 @@ public class WifiUtils {
 	}
 	
 	public static String getMacAddress() {
-		return getMacAddress(AppManager.getInstance());
+		return getMacAddress(ApplicationInit.getInstance());
 	}
 
 	public static String getMacAddress(Context context) {

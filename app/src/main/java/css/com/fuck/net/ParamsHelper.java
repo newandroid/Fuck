@@ -1,9 +1,6 @@
 package css.com.fuck.net;
 
 
-import android.text.TextUtils;
-
-
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -17,7 +14,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 import css.com.fuck.common.Constants;
 import css.com.fuck.utils.AES256Cipher;
 import css.com.fuck.utils.MD5Utils;
@@ -208,7 +205,7 @@ public final class ParamsHelper {
     private static Map<String, String> addCommonParams() {
         Map<String, String> paramsMap = new HashMap<String, String>();
 //        String mac = getMac();
-        String mac = WifiUtils.getMacAddress(AppManager.getInstance());
+        String mac = WifiUtils.getMacAddress(ApplicationInit.getInstance());
         if (mac.contains(":")){
             mac = mac.replace(":","");
             mac = mac.toUpperCase();

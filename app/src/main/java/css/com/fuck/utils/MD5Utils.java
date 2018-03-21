@@ -34,24 +34,5 @@ public class MD5Utils {
 
 		return hex.toString();
 	}
-
-	/**
-	 * 将字符串转成MD5值
-	 *
-	 * @param data
-	 * @return
-	 */
-	public static byte[] bytesToMD5(byte[] data) {
-		byte[] hash;
-
-		try {
-			hash = MessageDigest.getInstance("MD5").digest(data);
-		} catch (Throwable e) {
-			e.printStackTrace();
-			return null;
-		}
-
-		return hash;
-	}
 	
 }

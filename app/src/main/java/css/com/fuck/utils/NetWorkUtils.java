@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 
 
 /**
@@ -19,7 +19,7 @@ public class NetWorkUtils {
     public static final int NETTYPE_CMNET = 0x03;
 
     public static boolean isNetworkAvailable() {
-        ConnectivityManager cm = (ConnectivityManager) AppManager.getInstance()
+        ConnectivityManager cm = (ConnectivityManager) ApplicationInit.getInstance()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         if (cm != null) {
             //如果仅仅是用来判断网络连接
@@ -43,7 +43,7 @@ public class NetWorkUtils {
      */
     public static int getNetworkType() {
         int netType = 0;
-        ConnectivityManager connectivityManager = (ConnectivityManager) AppManager
+        ConnectivityManager connectivityManager = (ConnectivityManager) ApplicationInit
                 .getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
         if (networkInfo == null) {

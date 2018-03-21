@@ -3,7 +3,7 @@ package css.com.fuck.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import css.com.fuck.app.AppManager;
+import css.com.fuck.app.ApplicationInit;
 
 
 public class ToastUtils {
@@ -14,7 +14,7 @@ public class ToastUtils {
 		if (mToast == null) {
 			synchronized (ToastUtils.class) {
 				if (mToast == null) {
-					mToast = Toast.makeText(AppManager.getInstance().getApplicationContext(),
+					mToast = Toast.makeText(ApplicationInit.getInstance().getApplicationContext(),
 									"", Toast.LENGTH_SHORT);
 				}
 			}
@@ -46,19 +46,19 @@ public class ToastUtils {
 			toast.setText(text);
 			toast.show();
 		} else {
-			Toast.makeText(AppManager.getInstance().getApplicationContext(),
+			Toast.makeText(ApplicationInit.getInstance().getApplicationContext(),
 					text, Toast.LENGTH_SHORT).show();
 		}
 	}
 	
 	public static void showToast(int resId, Toast toast) {
-		String text = AppManager.getInstance().getApplicationContext()
+		String text = ApplicationInit.getInstance().getApplicationContext()
 				.getResources().getString(resId);
 		if (toast != null) {
 			toast.setText(text);
 			toast.show();
 		} else {
-			Toast.makeText(AppManager.getInstance().getApplicationContext(),
+			Toast.makeText(ApplicationInit.getInstance().getApplicationContext(),
 					text, Toast.LENGTH_SHORT).show();
 		}
 	}
