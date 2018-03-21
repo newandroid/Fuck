@@ -91,7 +91,7 @@ public class ServiceGenerator {
             }
             Response response = chain.proceed(request);
             if (NetWorkUtils.isNetworkAvailable()) {
-                response.newBuilder().header("Cache-Control", "public, max-age=" + 0)
+                 response.newBuilder().header("Cache-Control", "public, max-age=" + 0)
                         .removeHeader("Pragma")
                         .build();
             } else {
