@@ -16,7 +16,7 @@ import css.com.fuck.R;
 
 
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class ProgressView extends LinearLayout {
+public class DownloadProgressView extends LinearLayout {
 	
 	private TextView progressText;
 	private ProgressColor progressColor;
@@ -24,17 +24,17 @@ public class ProgressView extends LinearLayout {
 	private int height = 0;
 	private int progressTextLeft = 0;
 	
-	public ProgressView(Context context) {
+	public DownloadProgressView(Context context) {
 		super(context);
 		init();
 	}
 	
-	public ProgressView(Context context, AttributeSet attrs) {
+	public DownloadProgressView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		init();
 	}
 
-	public ProgressView(Context context, AttributeSet attrs, int defStyle) {
+	public DownloadProgressView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		init();
 	}
