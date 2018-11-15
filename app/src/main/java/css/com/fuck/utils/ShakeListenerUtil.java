@@ -12,9 +12,9 @@ import css.com.fuck.net.MRetrofitService;
 import css.com.fuck.net.ParamsHelper;
 import css.com.fuck.net.ServiceGenerator;
 import css.com.fuck.net.result.BaseResult;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class ShakeListenerUtil implements SensorEventListener {
     private static final int UPTATE_INTERVAL_TIME = 100;

@@ -1,1 +1,1 @@
-include ':app', ':thinkjava'
+include ':app', ':netlib'
