@@ -61,9 +61,9 @@ ext {
             "stetho-urlconnection"    : "com.facebook.stetho:stetho-urlconnection:1.3.1",
             "stetho-okhttp3"          : "com.facebook.stetho:stetho-okhttp3:1.3.1",
             // https://github.com/franmontiel/PersistentCookieJar
-            "PersistentCookieJar"          : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+            "PersistentCookieJar"     : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
             // https://github.com/zyao89/ZLoading
-            "zloading"          : "com.zyao89:zloading:1.0.8'",
+            "zloading"                : "com.zyao89:zloading:1.0.8'",
 
             // network + photo
             // https://github.com/bumptech/glide
@@ -128,6 +128,7 @@ ext {
             // https://google.github.io/dagger/
             "dagger2"                 : "com.google.dagger:dagger:${version["dagger2SdkVersion"]}",
             "dagger2-compiler"        : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
+            "dagger2-android"         : "com.google.dagger:dagger-android:${version["dagger2SdkVersion"]}",
             // https://github.com/hehonghui/AndroidEventBus
             "androideventbus"         : "org.simple:androideventbus:1.0.5.1",
             "multidex"                : "com.android.support:multidex:1.0.1",
@@ -168,6 +169,12 @@ ext {
             "zxing-library"           : "cn.yipianfengye.android:zxing-library:2.1",
 
             // 视频通话:声网
+            // im 环信
+
+            //xml 解析 https://github.com/FasterXML/jackson
+
+            // zip 压缩和解压 http://www.lingala.net/zip4j/index.php
+            "zip4j"                   : "net.lingala.zip4j:zip4j:1.3.2",
     ]
 
 
