@@ -1,4 +1,4 @@
-package css.com.fuck.utils;
+package css.com.fuck.utils.inputfilter;
 
 import android.content.Context;
 import android.text.InputFilter;
