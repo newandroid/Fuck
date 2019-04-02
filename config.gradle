@@ -155,6 +155,8 @@ ext {
             // 内存泄漏检测工具 https://github.com/square/leakcanary
             "canary-debug"            : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
             "canary-release"          : "com.squareup.leakcanary:leakcanary-android-no-op:${version["canarySdkVersion"]}",
+            //ui 卡顿 https://github.com/markzhai/AndroidPerformanceMonitor 没用过 待测试
+            "blockcanary"          : "com.github.markzhai:blockcanary-android:1.5.0",
             // 友盟统计分析插件
             "umeng-analytics"         : "com.umeng.analytics:analytics:6.0.1",
 

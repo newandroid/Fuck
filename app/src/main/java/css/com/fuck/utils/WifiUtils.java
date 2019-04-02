@@ -12,13 +12,11 @@ import android.provider.Settings;
 import android.provider.Settings.Secure;
 import android.util.Log;
 
-
-import org.apache.http.conn.util.InetAddressUtils;
-
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.io.Reader;
+import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -214,8 +212,8 @@ public class WifiUtils {
 						.getInetAddresses());
 				for (InetAddress address : ialist) {
 					if (!address.isLoopbackAddress()
-							&& InetAddressUtils.isIPv4Address(ipv4 = address
-									.getHostAddress())) {
+							&& address instanceof Inet4Address) {
+						ipv4 = address.getHostAddress();
 						return ipv4;
 					}
 				}
